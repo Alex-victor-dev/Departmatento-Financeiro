@@ -1,7 +1,10 @@
 package br.com.wakanda.DepartamentoFincanceiro.usuario.application.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
+import br.com.wakanda.DepartamentoFincanceiro.usuario.application.api.UsuarioListResponse;
 import br.com.wakanda.DepartamentoFincanceiro.usuario.application.api.UsuarioRequest;
 import br.com.wakanda.DepartamentoFincanceiro.usuario.application.api.UsuarioResponse;
 import br.com.wakanda.DepartamentoFincanceiro.usuario.application.repository.UsuarioRepository;
@@ -21,6 +24,13 @@ public class UsuarioApplicationService implements UsuarioService {
 		Usuario usuario = usuarioRepository.salva(new Usuario(usuarioRequest));
 		log.info("[finaliza] UsuarioApplicationService  - usuarioCriado");
 		return UsuarioResponse.builder().idUsuario(usuario.getIdUsusario()).build();
+	}
+
+	@Override
+	public List<UsuarioListResponse> buscaTodosClientes() {
+		log.info("[inicia] UsuarioApplicationService  - buscaTodosClientes");
+		log.info("[finaliza] UsuarioApplicationService  - buscaTodosClientes");
+		return null;
 	}
 
 }
