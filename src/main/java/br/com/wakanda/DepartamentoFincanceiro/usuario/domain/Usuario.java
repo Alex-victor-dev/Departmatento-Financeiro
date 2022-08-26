@@ -42,6 +42,8 @@ public class Usuario {
 	private Sexo sexo;
 	@NotNull
 	private LocalDate dataNascimento;
+	private Boolean aceitaTermos = true;
+	
 	private LocalDateTime dataHoraDoCadastro;
 	
 	public Usuario(UsuarioRequest usuarioRequest) {
@@ -51,6 +53,7 @@ public class Usuario {
 		this.email = usuarioRequest.getEmail();
 		this.dataNascimento = usuarioRequest.getDataNascimento();
 		this.dataHoraDoCadastro = LocalDateTime.now();
+		this.aceitaTermos = usuarioRequest.getAceitaTermos();
 		}
 	
 }
