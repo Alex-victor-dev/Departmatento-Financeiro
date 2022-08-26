@@ -49,6 +49,7 @@ public class Usuario {
 		this.cpf = usuarioRequest.getCpf();
 		this.telefone = usuarioRequest.getTelefone();
 		this.email = usuarioRequest.getEmail();
+		this.sexo = usuarioRequest.getSexo();
 		this.dataNascimento = usuarioRequest.getDataNascimento();
 		this.dataHoraDoCadastro = LocalDateTime.now();
 		}

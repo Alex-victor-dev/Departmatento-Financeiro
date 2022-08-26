@@ -18,6 +18,6 @@ public interface UsuarioAPI {
 	UsuarioResponse postAdicionaNovoUsuario(@RequestBody @Valid  UsuarioRequest usuarioRequest );
 	
 	@GetMapping
-	@ResponseStatus(code = HttpStatus.NO_CONTENT)
+	@ResponseStatus(code = HttpStatus.OK)
 	List<UsuarioListResponse> getTodosUsuarios();
 }
