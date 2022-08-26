@@ -1,5 +1,12 @@
 package br.com.wakanda.DepartamentoFincanceiro.usuario.application.api;
 
-public class UsuarioResponse {
+import java.util.UUID;
 
+import lombok.Builder;
+import lombok.Value;
+
+@Builder
+@Value
+public class UsuarioResponse {
+	private UUID idUsuario;
 }

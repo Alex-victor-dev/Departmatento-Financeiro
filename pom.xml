@@ -8,11 +8,11 @@
 		<version>2.7.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.com.petz</groupId>
-	<artifactId>cliente-pet</artifactId>
+	<groupId>br.com.wakanda</groupId>
+	<artifactId>Departamento-Financeiro</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>cliente-pet</name>
-	<description>Esse projeto mantem as entidades Cliente e Pet</description>
+	<description></description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
