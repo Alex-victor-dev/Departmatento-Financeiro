@@ -6,13 +6,12 @@ import br.com.wakanda.DepartamentoFincanceiro.usuario.application.api.UsuarioReq
 import br.com.wakanda.DepartamentoFincanceiro.usuario.application.api.UsuarioResponse;
 import br.com.wakanda.DepartamentoFincanceiro.usuario.application.repository.UsuarioRepository;
 import br.com.wakanda.DepartamentoFincanceiro.usuario.domain.Usuario;
-import br.com.wakanda.DepartamentoFincanceiro.usuario.service.ClienteService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 @Service
 @Log4j2
 @RequiredArgsConstructor
-public class UsuarioApplicationService implements ClienteService {
+public class UsuarioApplicationService implements UsuarioService {
 
 	private final UsuarioRepository usuarioRepository;
 
