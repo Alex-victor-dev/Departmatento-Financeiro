@@ -26,8 +26,9 @@ public class UsuarioInfraRepository implements UsuarioRepository {
 	@Override
 	public List<Usuario> buscaTosdosClientes() {
 		log.info("[inicia] UsuarioInfraRepository  - buscaTosdosClientes");		
+		List<Usuario> todosClientes = usuarioSpringMongoDBRepository.findAll();
 		log.info("[finaliza] UsuarioInfraRepository  - buscaTosdosClientes");		
-		return null;
+		return todosClientes;
 	}
 
 }
