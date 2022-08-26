@@ -19,5 +19,5 @@ public interface UsuarioAPI {
 	
 	@GetMapping
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
-	List<UsuarioResponse> getTodosPorUsuarios(UsuarioRequest usuarioRequest );
+	List<UsuarioListResponse> getTodosUsuarios();
 }

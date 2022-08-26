@@ -24,10 +24,12 @@ public class UsuarioController implements UsuarioAPI {
 	}
 
 	@Override
-	public List<UsuarioResponse> getTodosPorUsuarios(UsuarioRequest usuarioRequest) {
+	public List<UsuarioListResponse> getTodosUsuarios() {
 		log.info("[inicia] UsuarioController - getTodosPorUsuarios ");
 		log.info("[finaliza] UsuarioController - getTodosPorUsuarios ");
 		return null;
 	}
+
+
 
 }
