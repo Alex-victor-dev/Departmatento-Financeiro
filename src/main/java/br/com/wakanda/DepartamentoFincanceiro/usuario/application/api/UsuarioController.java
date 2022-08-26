@@ -1,5 +1,7 @@
 package br.com.wakanda.DepartamentoFincanceiro.usuario.application.api;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.wakanda.DepartamentoFincanceiro.usuario.service.ClienteService;
@@ -19,6 +21,13 @@ public class UsuarioController implements UsuarioAPI {
 		UsuarioResponse usuarioNovo = clienteService.usuarioCriado(usuarioRequest);
 		log.info("[finaliza] UsuarioController - postAdicionaNovoUsuario ");
 		return usuarioNovo;
+	}
+
+	@Override
+	public List<UsuarioResponse> getTodosPorUsuarios(UsuarioRequest usuarioRequest) {
+		log.info("[inicia] UsuarioController - getTodosPorUsuarios ");
+		log.info("[finaliza] UsuarioController - getTodosPorUsuarios ");
+		return null;
 	}
 
 }
