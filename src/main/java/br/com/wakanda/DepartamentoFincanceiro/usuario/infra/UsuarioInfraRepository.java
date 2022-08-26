@@ -1,5 +1,7 @@
 package br.com.wakanda.DepartamentoFincanceiro.usuario.infra;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 import br.com.wakanda.DepartamentoFincanceiro.usuario.application.repository.UsuarioRepository;
@@ -19,6 +21,13 @@ public class UsuarioInfraRepository implements UsuarioRepository {
 		Usuario usuarioSalvo =usuarioSpringMongoDBRepository.save(usuario);
 		log.info("[finaliza] UsuarioInfraRepository  - salva");		
 		return usuarioSalvo;
+	}
+
+	@Override
+	public List<Usuario> buscaTosdosClientes() {
+		log.info("[inicia] UsuarioInfraRepository  - buscaTosdosClientes");		
+		log.info("[finaliza] UsuarioInfraRepository  - buscaTosdosClientes");		
+		return null;
 	}
 
 }
