@@ -16,12 +16,11 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public interface UsuarioAPI {
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
-	UsuarioResponse postAdicionaNovoUsuario(@RequestBody @Valid  UsuarioRequest usuarioRequest );
-	
-	@PatchMapping(value = "/{idCliente}")
+	UsuarioResponse postAdicionaNovoUsuario(@RequestBody @Valid UsuarioRequest usuarioRequest);
+
+	@PatchMapping(value = "/{idUsuario}")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
-	UsuarioAlteradoResponse alteraUsuarioPorId (@PathVariable UUID idCliente, @RequestBody @Valid UsuarioRequest usuarioRequest);
-	
-	
-	
+	void patchAlteraUsuario(@PathVariable UUID idUsuario,
+			@RequestBody @Valid UsuarioAlteradoRequest usuarioAlteradoRequest);
 }
+
