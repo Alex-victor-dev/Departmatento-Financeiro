@@ -1,8 +1,12 @@
 package br.com.wakanda.DepartamentoFincanceiro.usuario.application.api;
 
+import java.util.UUID;
+
 import javax.validation.Valid;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,4 +17,11 @@ public interface UsuarioAPI {
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
 	UsuarioResponse postAdicionaNovoUsuario(@RequestBody @Valid  UsuarioRequest usuarioRequest );
+	
+	@PatchMapping(value = "/{idCliente}")
+	@ResponseStatus(code = HttpStatus.NO_CONTENT)
+	UsuarioAlteradoResponse alteraUsuarioPorId (@PathVariable UUID idCliente, @RequestBody @Valid UsuarioRequest usuarioRequest);
+	
+	
+	
 }

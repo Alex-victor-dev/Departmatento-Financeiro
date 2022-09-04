@@ -1,5 +1,9 @@
 package br.com.wakanda.DepartamentoFincanceiro.usuario.application.api;
 
+import java.util.UUID;
+
+import javax.validation.Valid;
+
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.wakanda.DepartamentoFincanceiro.usuario.application.service.UsuarioService;
@@ -19,6 +23,13 @@ public class UsuarioController implements UsuarioAPI {
 		UsuarioResponse usuarioNovo = usuarioService.usuarioCriado(usuarioRequest);
 		log.info("[finaliza] UsuarioController - postAdicionaNovoUsuario ");
 		return usuarioNovo;
+	}
+
+	@Override
+	public UsuarioAlteradoResponse alteraUsuarioPorId(UUID idCliente, @Valid UsuarioRequest usuarioRequest) {
+		log.info("[inicia] UsuarioController - alteraUsuarioPorId");
+		log.info("[inicia] UsuarioController - alteraUsuarioPorId");
+		return null;
 	}
 
 }
