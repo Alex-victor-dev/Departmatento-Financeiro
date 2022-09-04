@@ -24,28 +24,30 @@ import lombok.NoArgsConstructor;
 @Getter
 @Entity
 public class Usuario {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(columnDefinition = "UUID",name = "idUsuario", updatable = false, unique = true, nullable = false)
+	@Column(columnDefinition = "UUID", name = "idUsuario", updatable = false, unique = true, nullable = false)
 	private UUID idUsusario;
-	
+
 	@NotBlank
 	private String nomeCompleto;
 	@CPF
+	@Column(unique = true)
 	private String cpf;
 	@NotBlank
 	private String telefone;
 	@NotBlank
 	@Email
+	@Column(unique = true)
 	private String email;
 	private Sexo sexo;
 	@NotNull
 	private LocalDate dataNascimento;
 	private Boolean aceitaTermos = true;
-	
+
 	private LocalDateTime dataHoraDoCadastro;
-	
+
 	public Usuario(UsuarioRequest usuarioRequest) {
 		this.nomeCompleto = usuarioRequest.getNomeCompleto();
 		this.cpf = usuarioRequest.getCpf();
@@ -54,6 +56,6 @@ public class Usuario {
 		this.dataNascimento = usuarioRequest.getDataNascimento();
 		this.dataHoraDoCadastro = LocalDateTime.now();
 		this.aceitaTermos = usuarioRequest.getAceitaTermos();
-		}
-	
+	}
+
 }
