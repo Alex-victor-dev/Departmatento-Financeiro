@@ -27,7 +27,9 @@ public class UsuarioController implements UsuarioAPI {
 
 	@Override
 	public void patchAlteraUsuario(UUID idUsuario, @Valid UsuarioAlteradoRequest usuarioAlteradoRequest) {
+		log.info("[inicia] UsuarioController - patchAlteraUsuario ");		
 		usuarioService.patchAlteraUsuario(idUsuario, usuarioAlteradoRequest);
+		log.info("[inicia] UsuarioController - patchAlteraUsuario ");		
 
 	}
 

@@ -32,7 +32,7 @@ public class UsuarioApplicationService implements UsuarioService {
 	@Override
 	public void patchAlteraUsuario(UUID idUsuario, @Valid UsuarioAlteradoRequest usuarioAlteradoRequest) {
 		log.info("[inicia] UsuarioApplicationService  - patchAlteraUsuario");
-		Usuario usuario = usuarioRepository.buscaUsuarioPorId(idUsuario);
+//		Usuario usuario = usuarioRepository.buscaUsuarioPorId(idUsuario);
 		usuario.patchAlteraUsuari(usuarioAlteradoRequest);
 		log.info("[finaliza] UsuarioApplicationService  - patchAlteraUsuario");
 		

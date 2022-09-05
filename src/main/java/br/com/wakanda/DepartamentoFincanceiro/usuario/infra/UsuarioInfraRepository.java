@@ -26,11 +26,11 @@ public class UsuarioInfraRepository implements UsuarioRepository {
 		return usuarioSalvo;
 	}
 
-	@Override
-	public Usuario buscaUsuarioPorId(UUID idUsuario) {
-		Usuario usuario = usuarioSpringMongoDBRepository.findById(idUsuario)
-				.orElseThrow(() -> (APIException.build(HttpStatus.NOT_FOUND, "Usuario Não Encontrado")));
-		return usuario;
-	}
+//	@Override
+//	public Usuario buscaUsuarioPorId(UUID idUsuario) {
+//		Usuario usuario = usuarioSpringMongoDBRepository.findById(idUsuario)
+//				.orElseThrow(() -> (APIException.build(HttpStatus.NOT_FOUND, "Usuario Não Encontrado")));
+//		return usuario;
+//	}
 
 }

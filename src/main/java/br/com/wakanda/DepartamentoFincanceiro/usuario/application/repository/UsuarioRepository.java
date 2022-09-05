@@ -10,7 +10,7 @@ public interface UsuarioRepository {
 
 	Usuario salva(Usuario usuario);
 
-	Usuario buscaUsuarioPorId(UUID idUsuario);
+//	Usuario buscaUsuarioPorId(UUID idUsuario);
 
 
 	
