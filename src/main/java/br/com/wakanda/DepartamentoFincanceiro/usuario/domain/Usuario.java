@@ -9,12 +9,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.br.CPF;
 
+import br.com.wakanda.DepartamentoFincanceiro.usuario.application.api.UsuarioAlteradoRequest;
 import br.com.wakanda.DepartamentoFincanceiro.usuario.application.api.UsuarioRequest;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -56,6 +58,12 @@ public class Usuario {
 		this.dataNascimento = usuarioRequest.getDataNascimento();
 		this.dataHoraDoCadastro = LocalDateTime.now();
 		this.aceitaTermos = usuarioRequest.getAceitaTermos();
+	}
+
+	public void patchAlteraUsuari(@Valid UsuarioAlteradoRequest usuarioAlteradoRequest) {
+		this.telefone = usuarioAlteradoRequest.getTelefone();
+		this.email = usuarioAlteradoRequest.getEmail();
+
 	}
 
 }
