@@ -1,5 +1,6 @@
 package br.com.wakanda.DepartamentoFincanceiro.usuario.infra;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.http.HttpStatus;
@@ -26,11 +27,19 @@ public class UsuarioInfraRepository implements UsuarioRepository {
 		return usuarioSalvo;
 	}
 
-//	@Override
-//	public Usuario buscaUsuarioPorId(UUID idUsuario) {
-//		Usuario usuario = usuarioSpringMongoDBRepository.findById(idUsuario)
-//				.orElseThrow(() -> (APIException.build(HttpStatus.NOT_FOUND, "Usuario Não Encontrado")));
-//		return usuario;
-//	}
+	@Override
+	public List<Usuario> buscaTodosUsuarioRepository() {
+		log.info("[inicia] UsuarioInfraRepository  - buscaTodosUsuarioRepository");
+		List<Usuario> todosUsuarios = usuarioSpringMongoDBRepository.findAll();
+		log.info("[finaliza] UsuarioInfraRepository  - buscaTodosUsuarioRepository");
+		return todosUsuarios;
+	}
+
+	@Override
+	public Usuario buscaUsuarioPorId(UUID idUsuario) {
+		Usuario usuario = usuarioSpringMongoDBRepository.findById(idUsuario)
+				.orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Id Do Usuario nao encontrado : " + idUsuario));
+		return usuario;
+	}
 
 }

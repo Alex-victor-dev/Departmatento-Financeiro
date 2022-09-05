@@ -1,5 +1,6 @@
 package br.com.wakanda.DepartamentoFincanceiro.usuario.application.service;
 
+import java.util.List;
 import java.util.UUID;
 
 import javax.validation.Valid;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 import br.com.wakanda.DepartamentoFincanceiro.usuario.application.api.UsuarioAlteradoRequest;
 import br.com.wakanda.DepartamentoFincanceiro.usuario.application.api.UsuarioRequest;
 import br.com.wakanda.DepartamentoFincanceiro.usuario.application.api.UsuarioResponse;
+import br.com.wakanda.DepartamentoFincanceiro.usuario.application.api.UsuariosListResponse;
 import br.com.wakanda.DepartamentoFincanceiro.usuario.application.repository.UsuarioRepository;
 import br.com.wakanda.DepartamentoFincanceiro.usuario.domain.Usuario;
 import lombok.RequiredArgsConstructor;
@@ -32,12 +34,19 @@ public class UsuarioApplicationService implements UsuarioService {
 	@Override
 	public void patchAlteraUsuario(UUID idUsuario, @Valid UsuarioAlteradoRequest usuarioAlteradoRequest) {
 		log.info("[inicia] UsuarioApplicationService  - patchAlteraUsuario");
-//		Usuario usuario = usuarioRepository.buscaUsuarioPorId(idUsuario);
+		log.info("[idUsuario] {}", idUsuario);
+		Usuario usuario = usuarioRepository.buscaUsuarioPorId(idUsuario);
 		usuario.patchAlteraUsuari(usuarioAlteradoRequest);
+		usuarioRepository.salva(usuario);
 		log.info("[finaliza] UsuarioApplicationService  - patchAlteraUsuario");
-		
-		
+
 	}
 
-
+	@Override
+	public List<UsuariosListResponse> listaTodosUsuarios() {
+		log.info("[inicia] UsuarioApplicationService  - listaTodosUsuarios");
+		List<Usuario> usuarios = usuarioRepository.buscaTodosUsuarioRepository();
+		log.info("[finaliza] UsuarioApplicationService  - listaTodosUsuarios");
+		return UsuariosListResponse.converte(usuarios);
+	}
 }
