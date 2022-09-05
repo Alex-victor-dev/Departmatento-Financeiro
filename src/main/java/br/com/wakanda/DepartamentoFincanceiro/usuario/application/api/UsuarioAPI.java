@@ -6,6 +6,9 @@ import java.util.UUID;
 import javax.validation.Valid;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,4 +31,8 @@ public interface UsuarioAPI {
 	@GetMapping
 	@ResponseStatus(HttpStatus.OK)
 	List<UsuariosListResponse> getVisualizaTodosUsuarios();
+	
+	@DeleteMapping(value = "/{idUsuario}")
+	@ResponseStatus(code = HttpStatus.NO_CONTENT)
+	void deletaUsuarioPorId(@PathVariable UUID idUsuario);
 }
