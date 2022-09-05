@@ -44,6 +44,7 @@ public class UsuarioController implements UsuarioAPI {
 	@Override
 	public void deletaUsuarioPorId(UUID idUsuario) {
 		log.info("[inicia] UsuarioController - deletaUsuarioPorId");
+		usuarioService.deletaUsuarioPorId(idUsuario);
 		log.info("[finaliza] UsuarioController - deletaUsuarioPorId");
 
 	}

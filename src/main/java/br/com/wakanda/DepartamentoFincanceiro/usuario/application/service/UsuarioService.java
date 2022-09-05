@@ -11,8 +11,10 @@ public interface UsuarioService {
 
 	UsuarioResponse usuarioCriado(UsuarioRequest usuarioRequest);
 
-	void patchAlteraUsuario(UUID idUsuario,UsuarioAlteradoRequest usuarioAlteradoRequest);
+	void patchAlteraUsuario(UUID idUsuario, UsuarioAlteradoRequest usuarioAlteradoRequest);
 
 	List<UsuariosListResponse> listaTodosUsuarios();
+
+	void deletaUsuarioPorId(UUID idUsuario);
 
 }

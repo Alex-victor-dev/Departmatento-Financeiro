@@ -49,4 +49,16 @@ public class UsuarioApplicationService implements UsuarioService {
 		log.info("[finaliza] UsuarioApplicationService  - listaTodosUsuarios");
 		return UsuariosListResponse.converte(usuarios);
 	}
+
+	@Override
+	public void deletaUsuarioPorId(UUID idUsuario) {
+		log.info("[inicia] UsuarioApplicationService  - deletaUsuarioPorId");
+		log.info("[idUsuario] {}", idUsuario);
+		usuarioRepository.buscaUsuarioPorId(idUsuario);
+		usuarioRepository.deletaUsuarioPorId(idUsuario);
+		log.info("[finaliza] UsuarioApplicationService  - deletaUsuarioPorId");
+		
+		
+		
+	}
 }

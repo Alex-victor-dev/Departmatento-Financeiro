@@ -37,9 +37,18 @@ public class UsuarioInfraRepository implements UsuarioRepository {
 
 	@Override
 	public Usuario buscaUsuarioPorId(UUID idUsuario) {
-		Usuario usuario = usuarioSpringMongoDBRepository.findById(idUsuario)
-				.orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Id Do Usuario nao encontrado : " + idUsuario));
+		log.info("[inicia] UsuarioInfraRepository  - buscaUsuarioPorId");
+		Usuario usuario = usuarioSpringMongoDBRepository.findById(idUsuario).orElseThrow(
+				() -> APIException.build(HttpStatus.NOT_FOUND, "Id Do Usuario nao encontrado : " + idUsuario));
+		log.info("[inicia] UsuarioInfraRepository  - buscaUsuarioPorId");
 		return usuario;
+	}
+
+	@Override
+	public void deletaUsuarioPorId(UUID idUsuario) {
+		log.info("[inicia] UsuarioInfraRepository  - deletaUsuarioPorId");
+		usuarioSpringMongoDBRepository.deleteById(idUsuario);
+		log.info("[inicia] UsuarioInfraRepository  - deletaUsuarioPorId");
 	}
 
 }
