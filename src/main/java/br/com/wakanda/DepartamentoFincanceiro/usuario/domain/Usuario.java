@@ -6,6 +6,8 @@ import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -38,11 +40,13 @@ public class Usuario {
 	@Column(unique = true)
 	private String cpf;
 	@NotBlank
+	@Column(unique = true)
 	private String telefone;
 	@NotBlank
 	@Email
 	@Column(unique = true)
 	private String email;
+	@Enumerated(EnumType.STRING)
 	private Sexo sexo;
 	@NotNull
 	private LocalDate dataNascimento;
@@ -55,6 +59,7 @@ public class Usuario {
 		this.cpf = usuarioRequest.getCpf();
 		this.telefone = usuarioRequest.getTelefone();
 		this.email = usuarioRequest.getEmail();
+		this.sexo = usuarioRequest.getSexo();
 		this.dataNascimento = usuarioRequest.getDataNascimento();
 		this.dataHoraDoCadastro = LocalDateTime.now();
 		this.aceitaTermos = usuarioRequest.getAceitaTermos();
