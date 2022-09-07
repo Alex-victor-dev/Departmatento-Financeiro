@@ -57,8 +57,14 @@ public class UsuarioApplicationService implements UsuarioService {
 		usuarioRepository.buscaUsuarioPorId(idUsuario);
 		usuarioRepository.deletaUsuarioPorId(idUsuario);
 		log.info("[finaliza] UsuarioApplicationService  - deletaUsuarioPorId");
-		
-		
-		
+
+	}
+
+	@Override
+	public Usuario buscaUsuarioPorId(UUID idUsuario) {
+		log.info("[inicia] UsuarioApplicationService  - buscaUsuarioPorId");
+		Usuario usuario = usuarioRepository.buscaUsuarioPorId(idUsuario);
+		log.info("[finaliza] UsuarioApplicationService  - buscaUsuarioPorId");
+		return usuario;
 	}
 }

@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.wakanda.DepartamentoFincanceiro.usuario.application.service.UsuarioService;
+import br.com.wakanda.DepartamentoFincanceiro.usuario.domain.Usuario;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
@@ -47,6 +48,14 @@ public class UsuarioController implements UsuarioAPI {
 		usuarioService.deletaUsuarioPorId(idUsuario);
 		log.info("[finaliza] UsuarioController - deletaUsuarioPorId");
 
+	}
+
+	@Override
+	public UsuarioDetalhadoResponse getVisualizaUsuarioPorId(UUID idUsuario) {
+		log.info("[inicia] UsuarioController - getVisualizaUsuarioPorId");
+		Usuario usuario = usuarioService.buscaUsuarioPorId(idUsuario);
+		log.info("[inicia] UsuarioController - getVisualizaUsuarioPorId");
+		return new UsuarioDetalhadoResponse(usuario);
 	}
 
 }

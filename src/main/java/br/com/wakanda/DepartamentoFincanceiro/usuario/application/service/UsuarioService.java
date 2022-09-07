@@ -6,6 +6,7 @@ import br.com.wakanda.DepartamentoFincanceiro.usuario.application.api.UsuarioAlt
 import br.com.wakanda.DepartamentoFincanceiro.usuario.application.api.UsuarioRequest;
 import br.com.wakanda.DepartamentoFincanceiro.usuario.application.api.UsuarioResponse;
 import br.com.wakanda.DepartamentoFincanceiro.usuario.application.api.UsuariosListResponse;
+import br.com.wakanda.DepartamentoFincanceiro.usuario.domain.Usuario;
 
 public interface UsuarioService {
 
@@ -16,5 +17,7 @@ public interface UsuarioService {
 	List<UsuariosListResponse> listaTodosUsuarios();
 
 	void deletaUsuarioPorId(UUID idUsuario);
+
+	Usuario buscaUsuarioPorId(UUID idUsuario);
 
 }

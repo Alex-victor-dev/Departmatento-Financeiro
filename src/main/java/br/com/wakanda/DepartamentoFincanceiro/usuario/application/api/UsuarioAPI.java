@@ -29,7 +29,11 @@ public interface UsuarioAPI {
 	@GetMapping
 	@ResponseStatus(HttpStatus.OK)
 	List<UsuariosListResponse> getVisualizaTodosUsuarios();
-	
+
+	@GetMapping(value = "/{idUsuario}")
+	@ResponseStatus(HttpStatus.OK)
+	UsuarioDetalhadoResponse getVisualizaUsuarioPorId(@PathVariable UUID idUsuario);
+
 	@DeleteMapping(value = "/{idUsuario}")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
 	void deletaUsuarioPorId(@PathVariable UUID idUsuario);
